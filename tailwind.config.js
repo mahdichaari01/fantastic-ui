@@ -6,6 +6,7 @@ module.exports = {
       sans: ["Manrope", "sans-serif"],
       Inter: ["Inter", "sans-serif"],
       WorkSans: ["Work Sans", "sans-serif"],
+      Roboto: ["Roboto", "sans-serif"],
     },
     extend: {
       colors: {
@@ -26,6 +27,7 @@ module.exports = {
           secondary: "#0546ED",
           error: "#C83532",
           info: "#22BEB7",
+          accent: "#F9B915",
           success: "#22BEB7",
           warning: "#EE5527",
           neutral: "#15141F",
