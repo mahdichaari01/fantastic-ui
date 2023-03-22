@@ -22,12 +22,18 @@ export const Steps = ({ steps, current }) => {
       break;
   }
   return (
-    <ul className="steps w-full">
-      {steps.map((step, index) => (
-        <li key={step} className={`step ${index <= current ? accent : ""}`}>
-          {step}
-        </li>
-      ))}
+    <ul className="steps max-sm:scale-75 w-full max-w-lg">
+      {steps &&
+        steps.map((step, index) => (
+          <li
+            key={step + index}
+            className={`step ${
+              index <= current ? accent : ""
+            } text-xs text-neutral-500 `}
+          >
+            {step}
+          </li>
+        ))}
     </ul>
   );
 };

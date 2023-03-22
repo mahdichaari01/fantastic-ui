@@ -4,6 +4,8 @@ export const Checkbox = ({
   label,
   onChange,
   checked,
+  className,
+  size,
   name,
   disabled,
   freeze,
@@ -30,21 +32,27 @@ export const Checkbox = ({
       break;
   }
   return (
-    <div className={`flex flex-row justify-start items-center w-full gap-3`}>
+    <div className={`flex flex-row justify-start items-center w-full gap-3 `}>
+      <label
+        htmlFor={name}
+        className={`font-bold text-base text-black order-2 ${className}`}
+      >
+        {label}
+      </label>
       <input
-        className={`checkbox ${
+        className={`checkbox order-1 ${
           disabled || freeze ? "cursor-not-allowed" : "cursor-pointer"
-        } ${accent}`}
+        } ${accent} ${size === "sm" && "checkbox-sm"}`}
         type="checkbox"
         checked={checked}
         name={name}
-        onChange={(e) => onChange(e.target.checked)}
+        title={name}
+        onChange={(e) => {
+          onChange && onChange(e.target.value);
+        }}
         disabled={disabled || freeze}
         {...props}
       />
-      <label htmlFor={name} className="font-bold text-base text-black">
-        {label}
-      </label>
     </div>
   );
 };

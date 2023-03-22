@@ -22,13 +22,13 @@ export const TextArea = ({
       accent = "focus-within:border-mauve";
       break;
     case "blue":
-      accent = "focus-within:border-blue";
+      accent = "focus-within:border-secondary";
       break;
     case "green":
-      accent = "focus-within:border-green";
+      accent = "focus-within:border-info";
       break;
     case "orange":
-      accent = "focus-within:border-orange";
+      accent = "focus-within:border-warning";
       break;
     default:
       accent = "focus-within:border-mauve";
@@ -53,7 +53,9 @@ export const TextArea = ({
           placeholder={placeholder}
           name={name}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            onChange && onChange(e.target.value);
+          }}
           disabled={disabled || freeze}
           {...props}
         />

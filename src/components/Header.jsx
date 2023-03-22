@@ -1,28 +1,14 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import useMediaQuery from "../useMediaQuery";
 import { Icon } from "./Icon";
 import { Keys } from "./Keys";
+import { Logo } from "./Logo";
+import { routes } from "../routes";
 export default function Header() {
-  const routes = [
-    { path: "/Deploy", name: "Home" },
-    { path: "/Create", name: "Create" },
-    { path: "/Update", name: "Update" },
-    { path: "/Docs", name: "Docs" },
-    { path: "/Pricing", name: "Pricing" },
-  ];
   const md = useMediaQuery("(min-width:768px)");
   const lg = useMediaQuery("(min-width:1024px)");
-  const Logo = useCallback(() => {
-    return (
-      <div
-        id="logo"
-        className="font-WorkSans text-black text-3xl font-extrabold rounded-md hover:bg-base-300 transition-all p-3 cursor-pointer"
-      >
-        *fantastic
-      </div>
-    );
-  }, []);
+
   if (lg) {
     return (
       <header className="w-full z-50 flex flex-row justify-center px-24 py-11">

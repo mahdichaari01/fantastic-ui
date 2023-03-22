@@ -1,20 +1,19 @@
 import React from "react";
 import Header from "./Header";
 import { Footer } from "./Footer";
-import HeaderBackground from "../assets/HeaderBackground.png";
+import HeaderDecoration from "../assets/HeaderDecoration.png";
 
-export const Page = ({ children }) => {
+export const Page = ({ noFooter, children }) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${HeaderBackground})`,
-        minHeight: "100vh",
+        backgroundImage: `url(${HeaderDecoration})`,
       }}
-      className="bg-top max-md:bg-[auto 10.625rem] bg-[auto 15.0625rem] bg-no-repeat"
+      className={`bg-top min-h-screen w-full flex flex-col justify-between items-center max-md:bg-[auto 10.625rem] bg-[auto 15.0625rem] 2xl:bg-[auto 30vh] bg-repeat-x`}
     >
       <Header />
       {children}
-      <Footer />
+      <Footer decorationsOnly={noFooter} />
     </div>
   );
 };

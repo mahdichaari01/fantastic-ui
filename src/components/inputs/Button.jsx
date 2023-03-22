@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { themeContext } from "./themeContext";
-export const Button = ({ label, onClick, disabled, className }) => {
+export const Button = ({ label, onClick, disabled, className, href }) => {
   const theme = useContext(themeContext);
   let accent = "";
   switch (theme) {
@@ -21,15 +21,13 @@ export const Button = ({ label, onClick, disabled, className }) => {
       accent = "";
       break;
   }
-  return (
-    <button
-      className={`btn ${accent} ${
-        disabled && "btn-disabled bg-neutral-700"
-      } ${className}`}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {label}
-    </button>
-  );
+  const props = {
+    className: `btn ${accent} ${
+      disabled && "btn-disabled bg-neutral-700"
+    } ${className}`,
+    onClick: onClick || null,
+    disabled: disabled,
+    href: href || null,
+  };
+  return href ? <a {...props}>{label}</a> : <button {...props}>{label}</button>;
 };
