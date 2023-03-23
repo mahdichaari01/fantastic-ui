@@ -56,7 +56,8 @@ export const TextArea = ({
           onChange={(e) => {
             onChange && onChange(e);
           }}
-          disabled={disabled || freeze}
+          disabled={disabled}
+          readOnly={freeze}
           {...props}
         />
 

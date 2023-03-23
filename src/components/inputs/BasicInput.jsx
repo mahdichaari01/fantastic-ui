@@ -58,7 +58,8 @@ export const BasicInput = ({
           onChange={(e) => {
             onChange && onChange(e);
           }}
-          disabled={disabled || freeze}
+          disabled={disabled}
+          readOnly={freeze}
           {...props}
         />
 

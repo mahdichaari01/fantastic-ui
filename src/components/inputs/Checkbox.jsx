@@ -50,7 +50,8 @@ export const Checkbox = ({
         onChange={(e) => {
           onChange && onChange(e);
         }}
-        disabled={disabled || freeze}
+        disabled={disabled}
+        readOnly={freeze}
         {...props}
       />
     </div>
