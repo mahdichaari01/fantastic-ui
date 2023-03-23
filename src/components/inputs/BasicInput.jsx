@@ -65,11 +65,11 @@ export const BasicInput = ({
 
         {info && (
           <div
-            className="tooltip tooltip-left flex items-center justify-center"
+            className="tooltip tooltip-left flex cursor-none items-center justify-center"
             data-tip={info}
           >
             <Icon
-              className="variable-font-medium text-base leading-none"
+              className="variable-font-medium cursor-default text-base leading-none"
               icon="info"
             />
           </div>

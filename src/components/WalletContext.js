@@ -7,9 +7,9 @@ import { createContext } from "react";
     It should also contain the functions that are used to interact with the wallet
 */
 export const WalletContext = createContext({
-  connected: false,
+  connected: true,
   wallet: "0xe688b84b23f322a994A53dbF8E15FA82CDB71127 - 0.15 ETH",
   setWallet: () => {},
   connect: () => {},
-  balance: 0,
+  balance: 4,
 });

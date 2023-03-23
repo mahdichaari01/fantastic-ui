@@ -48,7 +48,7 @@ export const TextArea = ({
         } ${freeze && "border-none bg-[#F0F0F4]"}`}
       >
         <textarea
-          className={`w-full h-full text-black overflow-ellipsis bg-transparent placeholder:font-normal font-medium text-base border-none active:border-none outline-none focus:outline-none focus:border-none
+          className={`w-full h-full text-black overflow-ellipsis bg-transparent placeholder:font-normal font-medium text-sm border-none active:border-none outline-none focus:outline-none focus:border-none
             ${error && "text-error"} ${!resize && "resize-none"}`}
           placeholder={placeholder}
           name={name}

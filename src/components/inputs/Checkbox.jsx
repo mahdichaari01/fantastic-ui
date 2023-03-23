@@ -35,12 +35,12 @@ export const Checkbox = ({
     <div className={`flex flex-row justify-start items-center w-full gap-3 `}>
       <label
         htmlFor={name}
-        className={`font-bold text-base text-black order-2 ${className}`}
+        className={`font-bold text-[.9375rem] text-black order-2 ${className}`}
       >
         {label}
       </label>
       <input
-        className={`checkbox order-1 ${
+        className={`checkbox checkbox-md ${
           disabled || freeze ? "cursor-not-allowed" : "cursor-pointer"
         } ${accent} ${size === "sm" && "checkbox-sm"}`}
         type="checkbox"

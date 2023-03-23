@@ -39,7 +39,10 @@ export const Keys = () => {
     );
   }
   return (
-    <button disabled className="btn btn-primary btn-sm md:btn-md btn-outline ">
+    <button
+      disabled
+      className="btn btn-primary btn-xs sm:btn-sm md:btn-md btn-outline "
+    >
       Connect Wallet
     </button>
   );

@@ -1,6 +1,6 @@
 import { themeContext } from "./inputs";
 import React, { useContext } from "react";
-export const Steps = ({ steps, current }) => {
+export const Steps = ({ steps, current, ...props }) => {
   const theme = useContext(themeContext);
   let accent = "";
   switch (theme) {
@@ -22,14 +22,15 @@ export const Steps = ({ steps, current }) => {
       break;
   }
   return (
-    <ul className="steps max-sm:scale-75 w-full max-w-lg">
+    <ul className={`steps w-full max-w-lg ${props.className}`}>
       {steps &&
         steps.map((step, index) => (
           <li
             key={step + index}
-            className={`step ${
-              index <= current ? accent : ""
+            className={`step max-sm:text-[0.6rem] ${
+              index <= current ? accent + " font-medium" : ""
             } text-xs text-neutral-500 `}
+            data-content={index === current ? "●" : index < current ? "✔" : ""}
           >
             {step}
           </li>
