@@ -56,7 +56,7 @@ export const BasicInput = ({
           name={name}
           value={value}
           onChange={(e) => {
-            onChange && onChange(e.target.value);
+            onChange && onChange(e);
           }}
           disabled={disabled || freeze}
           {...props}

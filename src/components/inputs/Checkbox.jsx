@@ -48,7 +48,7 @@ export const Checkbox = ({
         name={name}
         title={name}
         onChange={(e) => {
-          onChange && onChange(e.target.value);
+          onChange && onChange(e);
         }}
         disabled={disabled || freeze}
         {...props}
