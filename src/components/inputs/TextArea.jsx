@@ -75,9 +75,9 @@ export const TextArea = ({
       </div>
 
       {error && (
-        <div className="flex ml-1 flex-row justify-start gap-1 items-center text-sm text-error">
+        <div className="flex ml-1 flex-row justify-start gap-1 items-center text-[.625rem] sm:text-xs  text-error">
           <Icon
-            className="text-base variable-font-medium variable-font-fill"
+            className="text-sm sm:text-base variable-font-medium variable-font-fill"
             icon="error"
           />
           <span>{error}</span>
