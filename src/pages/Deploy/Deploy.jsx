@@ -16,7 +16,7 @@ export default function DeployPage() {
   return (
     <Page noFooter>
       <themeContext.Provider value={"mauve"}>
-        <div className="flex w-fit max-w-full mb-10 flex-col items-center gap-7 px-[2.4375rem] justify-start rounded-3xl py-8 mx-4 sm:bg-white sm:shadow-lg">
+        <div className="flex w-fit max-w-full mb-10 flex-col items-center gap-7 max-sm:px-3 px-[2.4375rem] justify-start rounded-3xl py-8 mx-4 sm:bg-white sm:shadow-lg">
           <div className="text-center">
             <h1 className="font-Roboto text-4xl font-bold mb-2">Deploy</h1>
             <div className="text-sm font-light color-[#3F3F3F]">
@@ -32,7 +32,7 @@ export default function DeployPage() {
           </div>
           <div
             id="main-form"
-            className="grid grid-cols-1 gap-8 sm:grid-cols-2 justify-content-center"
+            className="grid grid-cols-1 gap-3 sm:gap-8 sm:grid-cols-2 justify-content-center"
           >
             <div className="flex flex-col gap-3 max-w-[25rem]">
               <BasicInput
@@ -71,7 +71,7 @@ export default function DeployPage() {
               />
               <InputGroup>
                 <Checkbox label="Free Mint" name="Mintable" />
-                <div className="flex flex-row w-full gap-6">
+                <div className="flex max-[320px]:flex-col flex-row w-full gap-6">
                   <BasicInput
                     label="Max Free"
                     placeholder="250"
@@ -101,7 +101,7 @@ export default function DeployPage() {
               </InputGroup>
               <InputGroup>
                 <Checkbox label="Presale Mint" name="preSale" />
-                <div className="flex flex-row w-full gap-6">
+                <div className="flex max-[320px]:flex-col flex-row w-full gap-6">
                   <BasicInput
                     label="Price Whitelist Mint"
                     placeholder="0.1"
@@ -151,11 +151,11 @@ export default function DeployPage() {
             className="w-full flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-7 "
           >
             <Button
-              className="bg-[#FCFCFC] text-mauve max-sm:order-1 max-md:hidden outline-none border-none hover:bg-[#adadad]"
+              className="bg-[#FCFCFC] text-mauve max-sm:order-1 max-md:hidden outline-none border-none hover:bg-[#e9e9e9] btn-xs"
               label="More Information"
               href={"https://docs.bayc.app/deploy"}
             />
-            <div className="max-sm:order-2 w-full flex flex-row justify-center">
+            <div className="max-sm:order-4 max-[440px]:order-2 w-full flex flex-row justify-center">
               <Steps
                 steps={[
                   "connection",
@@ -166,10 +166,9 @@ export default function DeployPage() {
                   "finished",
                 ]}
                 current={4}
-                className=""
               />
             </div>
-            <Button label="Connect" className="max-sm:order-1" />
+            <Button label="Connect" className="order-3" />
           </div>
         </div>
       </themeContext.Provider>

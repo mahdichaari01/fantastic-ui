@@ -28,21 +28,21 @@ export const Checkbox = ({
       accent = "checkbox-warning";
       break;
     default:
-      accent = "checked:bg-mauve";
+      accent = "checkbox-primary";
       break;
   }
   return (
-    <div className={`flex flex-row justify-start items-center w-full gap-3 `}>
+    <div className={`flex flex-row justify-start items-center w-full gap-2 `}>
       <label
         htmlFor={name}
-        className={`font-bold text-[.9375rem] text-black order-2 ${className}`}
+        className={`font-bold text-[.8125rem] text-black order-2 ${className}`}
       >
         {label}
       </label>
       <input
-        className={`checkbox checkbox-md ${
+        className={`checkbox ${
           disabled || freeze ? "cursor-not-allowed" : "cursor-pointer"
-        } ${accent} ${size === "sm" && "checkbox-sm"}`}
+        } ${accent} ${size === "sm" ? "checkbox-sm" : ""}`}
         type="checkbox"
         checked={checked}
         name={name}

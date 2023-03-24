@@ -39,11 +39,14 @@ export const TextArea = ({
         disabled && "opacity-75"
       }`}
     >
-      <label htmlFor={name} className="font-bold text-base text-black">
+      <label
+        htmlFor={name}
+        className="font-semibold text-[.8125rem] text-black"
+      >
         {label}
       </label>
       <div
-        className={`flex transition-all flex-row flex-grow flex-shrink overflow-hidden justify-between items-start p-3 gap-2 rounded-lg border-2 border-solid border-[#D5D4DC] ${
+        className={`flex transition-all shadow flex-row flex-grow flex-shrink overflow-hidden justify-between items-start p-2 gap-2 rounded-lg border border-solid border-[#D5D4DC] ${
           error ? "border-error bg-red-100" : accent
         } ${freeze && "border-none bg-[#F0F0F4]"}`}
       >

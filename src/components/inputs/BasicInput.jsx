@@ -39,11 +39,14 @@ export const BasicInput = ({
         disabled && "opacity-75"
       }  ${className}`}
     >
-      <label htmlFor={name} className="font-bold text-sm text-black">
+      <label
+        htmlFor={name}
+        className="font-semibold text-[.8125rem] text-black"
+      >
         {label}
       </label>
       <div
-        className={`flex transition-all flex-row justify-between items-center p-2 gap-2 rounded-lg border-2 border-solid border-[#D5D4DC]   ${
+        className={`flex transition-all flex-row justify-between items-center p-2 gap-2 rounded-lg shadow border border-solid border-[#D5D4DC]   ${
           error ? "border-error bg-red-100" : accent
         } ${freeze && "border-none bg-[#F0F0F4]"}`}
       >
