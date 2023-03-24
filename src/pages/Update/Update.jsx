@@ -11,11 +11,11 @@ import {
 } from "../../components/inputs";
 import { useContext } from "react";
 import { WalletContext } from "../../components/WalletContext";
-export default function CreatePage() {
+export default function UpdatePage() {
   const { wallet } = useContext(WalletContext);
   return (
     <Page noFooter>
-      <themeContext.Provider value={"blue"}>
+      <themeContext.Provider value={"orange"}>
         <div className="w-full px-5 flex flex-col md:flex-row items-center  justify-evenly">
           <div
             id="form"

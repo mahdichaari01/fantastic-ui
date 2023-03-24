@@ -6,7 +6,11 @@ import { createContext, useEffect, useState } from "react";
     components that need the wallet object.
     It should also contain the functions that are used to interact with the wallet
 */
-export const WalletContext = createContext();
+export const WalletContext = createContext({
+  walletID: "0xe688b84b23f322a994A53dbF8E15FA82CDB71127 - 0.15 ETH",
+  connected: false,
+  connect: () => {},
+});
 
 export const WalletProvider = ({ children, ...props }) => {
   const [wallet, setWallet] = useState({
@@ -21,7 +25,7 @@ export const WalletProvider = ({ children, ...props }) => {
         .then(
           setWallet({
             connected: true,
-            walletID: "0xe688b84b23f322a994A53dbF8E15FA82CDB71127 - 0.15 ETH",
+            wallet: "0xe688b84b23f322a994A53dbF8E15FA82CDB71127 - 0.15 ETH",
             ...wallet,
           })
         )

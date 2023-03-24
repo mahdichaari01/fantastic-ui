@@ -5,6 +5,7 @@ import { Page } from "./components/Page";
 import { ShowcaseSection } from "./components/Showcase";
 import CreatePage from "./pages/Create/Create";
 import DeployPage from "./pages/Deploy/Deploy";
+import UpdatePage from "./pages/Update/Update";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
           }
         />
         <Route path="/Create" element={<CreatePage />} />
+        <Route path="/Update" element={<UpdatePage />} />
         <Route path="/Deploy" element={<DeployPage />} />
       </Routes>
     </BrowserRouter>
