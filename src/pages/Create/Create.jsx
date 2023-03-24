@@ -1,4 +1,5 @@
 import { Page } from "../../components/Page";
+import { Icon } from "../../components/Icon";
 import {
   BasicInput,
   themeContext,
@@ -7,10 +8,14 @@ import {
   Checkbox,
   Button,
 } from "../../components/inputs";
-export default function CreatePage() {
+import { Steps } from "../../components/Steps";
+import { useContext } from "react";
+import { WalletContext } from "../../components/WalletContext";
+export default function DeployPage() {
+  const { wallet } = useContext(WalletContext);
   return (
-    <Page>
-      <themeContext.Provider value={{ theme: "blue" }}></themeContext.Provider>
+    <Page noFooter>
+      <themeContext.Provider value={"blue"}></themeContext.Provider>
     </Page>
   );
 }
