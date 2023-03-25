@@ -3,9 +3,6 @@ import { Icon } from "../../components/Icon";
 import {
   BasicInput,
   themeContext,
-  TextArea,
-  InputGroup,
-  Checkbox,
   Button,
   Select,
 } from "../../components/inputs";

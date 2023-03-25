@@ -8,7 +8,7 @@ import updateArt from "../assets/updateArt.png";
 import visitArt from "../assets/visitArt.png";
 
 const IMG_CLASSNAME =
-  "object-contain h-full transition-all duration-[17ms] ease-linear w-auto";
+  "object-contain h-full transition-all duration-[33ms] w-auto";
 const FloatingImg = ({ ...props }) => {
   const ref = useRef();
   const rand = useMemo(() => Math.random() + 1, []);

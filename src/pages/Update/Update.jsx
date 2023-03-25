@@ -3,9 +3,6 @@ import { Icon } from "../../components/Icon";
 import {
   BasicInput,
   themeContext,
-  TextArea,
-  InputGroup,
-  Checkbox,
   Button,
   Select,
 } from "../../components/inputs";
@@ -92,13 +89,13 @@ export default function UpdatePage() {
               <Button label="Connect" className="order-3" />
             </div>
           </div>
-          <div
+          <html
             id="preview"
-            className="w-full md:w-2/5 max-w-4xl text-center font-bold text-xl max-sm:px-3 px-[2.4375rem]"
+            className="w-full md:w-2/5 max-w-4xl text-[3px] text-center font-bold text-xl max-sm:px-3 px-[2.4375rem]"
           >
             <p>Preview</p>
-            <div className="w-full aspect-w-3 aspect-h-2 rounded-2xl bg-slate-500 shadow-lg"></div>
-          </div>
+            <div className="w-[120rem] aspect-w-3 aspect-h-2 rounded-2xl bg-slate-500 shadow-lg"></div>
+          </html>
         </div>
       </themeContext.Provider>
     </Page>
