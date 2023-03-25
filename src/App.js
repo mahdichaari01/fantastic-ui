@@ -6,7 +6,9 @@ import { LandingPage } from "./pages/LandingPage/LandingPage";
 import CreatePage from "./pages/Create/Create";
 import DeployPage from "./pages/Deploy/Deploy";
 import UpdatePage from "./pages/Update/Update";
+import { Browse } from "./pages/Browse";
 import { Dapp } from "./pages/Dapp/Dapp";
+import { Unfound } from "./pages/404";
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +32,8 @@ function App() {
             />
           }
         />
+        <Route path="/Browse" element={<Browse />} />
+        <Route path="/404" element={<Unfound />} />
       </Routes>
     </BrowserRouter>
   );
