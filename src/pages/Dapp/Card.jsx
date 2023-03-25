@@ -1,9 +1,18 @@
 import { useEffect, useRef, useMemo } from "react";
 import frostedTexture from "../../assets/frostedTexture.png";
-export const Card = ({ imgSrc, name, description, price, remaining, xs }) => {
+export const Card = ({
+  imgSrc,
+  name,
+  description,
+  price,
+  remaining,
+  xs,
+  noAnimation,
+}) => {
   const cardref = useRef(null);
   const root = useMemo(() => document.getElementById("root"), []);
   useEffect(() => {
+    if (noAnimation) return;
     if (cardref.current) {
       const constrain = 300;
       let frameID = null;
@@ -39,7 +48,7 @@ export const Card = ({ imgSrc, name, description, price, remaining, xs }) => {
         root.onmousemove = null;
       };
     }
-  }, [root, cardref]);
+  }, [root, cardref, noAnimation]);
   return (
     <div className="relative">
       <style>
