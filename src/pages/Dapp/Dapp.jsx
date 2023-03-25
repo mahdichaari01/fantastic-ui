@@ -6,7 +6,6 @@ import facebook from "../../assets/facebook.svg";
 import twitter from "../../assets/twitter.svg";
 import instagram from "../../assets/instagram.svg";
 import linkedin from "../../assets/linkedin.svg";
-
 const SocialIcons = new Map([
   ["facebook", <img src={facebook} alt="fb icon" />],
   ["twitter", <img src={twitter} alt="twtr icon" />],
@@ -108,7 +107,7 @@ export const Dapp = ({
               style={{ backgroundColor: Vibrant }}
               className="saturate-150 w-max text-black font-black text-xl leading-none flex justify-center items-center p-4 hover:brightness-75 transition-all"
             >
-              <span className="opacity-70">MINT NOW</span>
+              <span className="opacity-70 inline-block w-max">MINT NOW</span>
             </button>
             <div className="w-full font-light text-xs text-white">
               By clicking “Mint” you agree to our{" "}

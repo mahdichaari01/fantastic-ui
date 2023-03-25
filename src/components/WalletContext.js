@@ -15,7 +15,7 @@ export const WalletContext = createContext({
 export const WalletProvider = ({ children, ...props }) => {
   const [wallet, setWallet] = useState({
     connected: false,
-    walletID: undefined,
+    walletID: "afat",
     connect: () => {
       //THIS IS AN EXAMPLE IMPLEMENTATION OF THE CONNECT FUNCTION
 

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { WalletContext } from "./WalletContext";
 import KeyIcon from "../assets/keyIcon.png";
 import { Icon } from "./Icon";
-export const Keys = () => {
+export const Keys = ({ light }) => {
   const wallet = useContext(WalletContext);
   if (wallet.connected) {
     const keys = 50;
@@ -39,7 +39,11 @@ export const Keys = () => {
     );
   }
   return (
-    <button className="btn btn-primary btn-xs sm:btn-sm md:btn-md btn-outline ">
+    <button
+      className={`btn btn-xs sm:btn-sm md:btn-md btn-outline  ${
+        light ? "border-white text-white" : "btn-primary "
+      }`}
+    >
       Connect Wallet
     </button>
   );

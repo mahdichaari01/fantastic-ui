@@ -3,5 +3,5 @@ export const routes = [
   { path: "/Create", name: "Create" },
   { path: "/Update", name: "Update" },
   { path: "/Docs", name: "Docs" },
-  { path: "/Pricing", name: "Pricing" },
+  { path: "/#pricing", name: "Pricing" },
 ];

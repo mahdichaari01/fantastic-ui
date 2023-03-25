@@ -8,6 +8,7 @@ import {
 } from "../../components/inputs";
 import { useContext } from "react";
 import { WalletContext } from "../../components/WalletContext";
+import { DappPreview } from "../Dapp/DappPreview";
 export default function CreatePage() {
   const { wallet } = useContext(WalletContext);
   return (
@@ -91,10 +92,21 @@ export default function CreatePage() {
           </div>
           <div
             id="preview"
-            className="w-full md:w-2/5 max-w-4xl text-center font-bold text-xl max-sm:px-3 px-[2.4375rem]"
+            className="w-full md:w-[45%] text-[3px] text-center font-bold text-xl max-sm:px-3 px-[2.4375rem]"
           >
             <p>Preview</p>
-            <div className="w-full aspect-w-3 aspect-h-2 rounded-2xl bg-slate-500 shadow-lg"></div>
+            <div className="w-full aspect-w-3 aspect-h-2 rounded-2xl overflow-hidden shadow-lg">
+              <DappPreview
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+                name="modernMash"
+                imgSrc="https://i.seadn.io/gcs/files/c3bde3d8552abf7e8bc037c0284f5943.jpg?auto=format&w=1000"
+                remaining={450}
+                price="0.015"
+                DarkVibrant="#286f7b"
+                Vibrant="#fff3cb"
+                Function="Presale"
+              />
+            </div>
           </div>
         </div>
       </themeContext.Provider>

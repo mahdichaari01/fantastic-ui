@@ -8,18 +8,19 @@ import {
 } from "../../components/inputs";
 import { useContext } from "react";
 import { WalletContext } from "../../components/WalletContext";
+import { DappPreview } from "../Dapp/DappPreview";
 export default function UpdatePage() {
   const { wallet } = useContext(WalletContext);
   return (
     <Page noFooter>
       <themeContext.Provider value={"orange"}>
-        <div className="w-full px-5 flex flex-col md:flex-row items-center  justify-evenly">
+        <div className="w-full flex-wrap px-5 flex flex-col md:flex-row items-center  justify-evenly">
           <div
             id="form"
             className="flex w-full md:w-2/5 max-w-[31.25rem] mb-10 flex-col items-center gap-7 max-sm:px-3 px-[2.4375rem] justify-start rounded-3xl py-8 sm:bg-white sm:shadow-lg"
           >
             <div className="text-center w-full">
-              <h1 className="font-Roboto text-4xl font-bold mb-2">Create</h1>
+              <h1 className="font-Roboto text-4xl font-bold mb-2">Update</h1>
               <div className="text-sm font-light color-[#3F3F3F]">
                 {wallet ? (
                   <div className="flex flex-row gap-1 items-center">
@@ -44,8 +45,12 @@ export default function UpdatePage() {
                 placeholder="Enter your contract Name"
                 type="text"
               />
-              <Select label="Choose Function" name="Function">
-                <option disabled selected>
+              <Select
+                defaultValue="default"
+                label="Choose Function"
+                name="Function"
+              >
+                <option value="default" disabled>
                   Select Function
                 </option>
                 <option value="Free">Free Mint</option>
@@ -89,13 +94,24 @@ export default function UpdatePage() {
               <Button label="Connect" className="order-3" />
             </div>
           </div>
-          <html
+          <div
             id="preview"
-            className="w-full md:w-2/5 max-w-4xl text-[3px] text-center font-bold text-xl max-sm:px-3 px-[2.4375rem]"
+            className="w-full md:w-[45%] text-[3px] text-center font-bold text-xl max-sm:px-3 px-[2.4375rem]"
           >
             <p>Preview</p>
-            <div className="w-[120rem] aspect-w-3 aspect-h-2 rounded-2xl bg-slate-500 shadow-lg"></div>
-          </html>
+            <div className="w-full aspect-w-3 aspect-h-2 rounded-2xl overflow-hidden shadow-lg">
+              <DappPreview
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+                name="modernMash"
+                imgSrc="https://i.seadn.io/gcs/files/c3bde3d8552abf7e8bc037c0284f5943.jpg?auto=format&w=1000"
+                remaining={450}
+                price="0.015"
+                DarkVibrant="#286f7b"
+                Vibrant="#fff3cb"
+                Function="Presale"
+              />
+            </div>
+          </div>
         </div>
       </themeContext.Provider>
     </Page>
