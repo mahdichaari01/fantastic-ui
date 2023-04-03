@@ -2,7 +2,29 @@ import { Card } from "./Card";
 import BG from "../../assets/dappBg.jpg";
 import Logo from "../../assets/poweredbyLogo.png";
 import { Icon } from "../../components/Icon";
-import useMediaQuery from "../../useMediaQuery";
+import facebook from "../../assets/facebook.svg";
+import twitter from "../../assets/twitter.svg";
+import instagram from "../../assets/instagram.svg";
+import linkedin from "../../assets/linkedin.svg";
+const SOCIAL_ICON_CLASSNAME = "h-[1.7vw] w-[1.7vw] md:h-[0.8vw] md:w-[0.8vw] ";
+const SocialIcons = new Map([
+  [
+    "facebook",
+    <img className={SOCIAL_ICON_CLASSNAME} src={facebook} alt="fb icon" />,
+  ],
+  [
+    "twitter",
+    <img className={SOCIAL_ICON_CLASSNAME} src={twitter} alt="twtr icon" />,
+  ],
+  [
+    "instagram",
+    <img className={SOCIAL_ICON_CLASSNAME} src={instagram} alt="ig icon" />,
+  ],
+  [
+    "linkedin",
+    <img className={SOCIAL_ICON_CLASSNAME} src={linkedin} alt="lkdin icon" />,
+  ],
+]);
 export const DappPreview = ({
   imgSrc,
   name,
@@ -13,8 +35,6 @@ export const DappPreview = ({
   DarkVibrant,
   Function,
 }) => {
-  const sm = useMediaQuery("(min-width:640px)");
-
   const CardProps = { name, imgSrc, description, price, remaining };
   return (
     <div
@@ -22,12 +42,12 @@ export const DappPreview = ({
         backgroundImage: `url(${BG})`,
         backgroundColor: `#000000`,
       }}
-      className={`cursor-default select-none h-full w-full flex flex-col justify-between items-center bg-cover bg-[400%] bg-no-repeat gap-[1vw]`}
+      className={` select-none h-full w-full flex flex-col justify-between items-center bg-cover bg-[400%] bg-no-repeat gap-[1vw]`}
     >
       <header className="w-full z-50 flex flex-row justify-center px-[3vw] md:px-[1vw] pt-[2vw] md:pt-[0.5vw]">
         <div className="flex flex-row w-full justify-between items-center">
           <div
-            className={`rounded-2xl p-[1vw] md:p-[0.4vw] cursor-pointer hover:bg-[#0000004d] `}
+            className={`rounded-2xl p-[1vw] md:p-[0.4vw]  hover:bg-[#0000004d] `}
           >
             <img
               src={Logo}
@@ -67,7 +87,7 @@ export const DappPreview = ({
                   "linear-gradient(150deg, rgba(217, 217, 217, 0.25) -7.53%, rgba(217, 217, 217, 0) 97.04%)",
               }}
             >
-              <div className="h-[4.5vw] w-[4.5vw] md:h-[1.5vw] md:w-[1.5vw] flex justify-center items-center text-white cursor-pointer hover:bg-neutral-600">
+              <div className="h-[4.5vw] w-[4.5vw] md:h-[1.5vw] md:w-[1.5vw] flex justify-center items-center text-white  hover:bg-neutral-600">
                 <Icon
                   icon="add"
                   className="variable-font-medium text-[3vw] md:text-[1vw] leading-none"
@@ -77,7 +97,7 @@ export const DappPreview = ({
                 className="bg-[#1B1B1B] w-[3.2ch] text-[3vw] md:text-[1vw] leading-none font-black text-center text-white active:outline-none focus:outline-none"
                 placeholder="150"
               />
-              <div className="h-[4.5vw] w-[4.5vw] md:h-[1.5vw] md:w-[1.5vw] flex justify-center items-center text-white cursor-pointer hover:bg-neutral-600">
+              <div className="h-[4.5vw] w-[4.5vw] md:h-[1.5vw] md:w-[1.5vw] flex justify-center items-center text-white  hover:bg-neutral-600">
                 <Icon
                   icon="remove"
                   className="variable-font-medium text-[3vw] md:text-[1vw] leading-none"
@@ -101,6 +121,16 @@ export const DappPreview = ({
               <span className="font-semibold">Privacy Policy</span>
             </div>
           </div>
+          <ul className="flex flex-row gap-[1vw] mt-[0.5vw] items-center">
+            {Array.from(SocialIcons).map(([key, val], index) => (
+              <li
+                className="rounded-full  transition-all bg-neutral-100 hover:bg-neutral-300 p-[0.3vw] md:p-[0.17vw]"
+                key={key}
+              >
+                {val}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="pb-[0.4vw]">
