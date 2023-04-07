@@ -75,12 +75,12 @@ const PricingOption = ({
           <sup>ETH</sup>
         </div>
         <div className="text-base font-Inter font-medium w-max">
-          /{tickets} tickets
+          /{tickets} keys
         </div>
       </div>
       <div className="flex flex-col gap-[.375rem]">
         <div
-          className={`text-[1.75rem] ${
+          className={`text-[1.75rem] w-max ${
             gold ? "text-[#FFC708] font-bold" : "text-[#676767] font-semibold"
           }`}
         >

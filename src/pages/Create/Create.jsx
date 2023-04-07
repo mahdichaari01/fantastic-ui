@@ -19,6 +19,7 @@ export default function CreatePage() {
             id="form"
             className="flex w-full md:w-2/5 max-w-[31.25rem] mb-10 flex-col items-center gap-7 max-sm:px-3 px-[2.4375rem] justify-start rounded-3xl py-8 sm:bg-white sm:shadow-lg"
           >
+            <div></div>
             <div className="text-center w-full">
               <h1 className="font-Roboto text-4xl font-bold mb-2">Create</h1>
               <div className="text-sm font-light color-[#3F3F3F]">
